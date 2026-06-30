@@ -498,7 +498,7 @@ export default function MobileApp() {
                 src={`https://www.instagram.com/reel/${activeReel}/embed/`}
                 frameBorder="0"
                 scrolling="no"
-                allowtransparency
+                allowTransparency
                 allow="encrypted-media"
                 style={{ width: "100%", height: "600px", border: "none" }}
               />

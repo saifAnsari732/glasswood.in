@@ -96,7 +96,7 @@ export default function ReelsShowcase() {
                       className={styles.instagramIframe}
                       scrolling="no"
                       allowFullScreen
-                      allowtransparency
+                      allowTransparency
                       frameBorder="0"
                     />
                   </div>
