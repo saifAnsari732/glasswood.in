@@ -54,6 +54,7 @@ export default function Hero() {
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.2, duration: 1.2, ease: [0.16, 1, 0.3, 1] }}
           >
+            {/* drmhozesdmh;ldemtzn;lmdt; */}
            Siwan Ka Trusted Glass & 
             <span className="glow-text-teal">  Mirror Shop</span>
             <span className="text-sky-600">PURE LUXURY</span>
