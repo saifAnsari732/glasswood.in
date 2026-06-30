@@ -1,0 +1,166 @@
+.reelsSection {
+  background-color: #F6F3EE;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 4rem auto;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--accent-wood);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.accent {
+  color: var(--accent-gold);
+  font-style: italic;
+  font-family: serif;
+}
+
+.largeDescription {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1A302E;
+}
+
+/* Carousel Container Wrapper */
+.carouselWrapper {
+  position: relative;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.sliderViewport {
+  width: 100%;
+  overflow: hidden;
+  border-radius: 12px;
+  background: transparent;
+}
+
+.sliderTrack {
+  display: flex;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  width: 100%;
+}
+
+.slide {
+  padding: 0 1rem; /* Spacing between the card items */
+  box-sizing: border-box;
+}
+
+.reelFrameContainer {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  overflow: hidden;
+  background: var(--card-bg);
+  box-shadow: 0 15px 40px rgba(160, 120, 85, 0.08);
+  border: 1px solid rgba(160, 120, 85, 0.15);
+  border-radius: 8px;
+}
+
+.instagramIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+  overflow: hidden;
+}
+
+/* Navigation Buttons */
+.navBtn {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 1px solid rgba(160, 120, 85, 0.2);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--foreground);
+  box-shadow: 0 8px 24px rgba(160, 120, 85, 0.08);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+  z-index: 10;
+}
+
+.navBtn:hover {
+  background: var(--foreground);
+  color: #FAF8F5;
+  border-color: var(--foreground);
+}
+
+.leftBtn {
+  left: -25px;
+}
+
+.rightBtn {
+  right: -25px;
+}
+
+/* Dots Indicators */
+.indicatorBar {
+  display: flex;
+  justify-content: center;
+  gap: 0.6rem;
+  margin: 2.5rem 0 3.5rem 0;
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(160, 120, 85, 0.2);
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.dot:hover {
+  background: var(--accent-gold);
+}
+
+.activeDot {
+  background: var(--accent-gold);
+  transform: scale(1.2);
+}
+
+.footerActions {
+  text-align: center;
+}
+
+@media (max-width: 1300px) {
+  .leftBtn {
+    left: -10px;
+  }
+  .rightBtn {
+    right: -10px;
+  }
+}
+
+@media (max-width: 768px) {
+  .leftBtn, .rightBtn {
+    width: 40px;
+    height: 40px;
+  }
+  .reelFrameContainer {
+    height: 460px;
+  }
+  .slide {
+    padding: 0 0.5rem;
+  }
+}

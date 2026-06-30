@@ -1,0 +1,344 @@
+.page {
+  min-height: 100vh;
+  background-color: #F4F7F5;
+  width: 100%;
+  overflow-x: hidden;
+}
+
+/* ── Hero Banner ── */
+.hero {
+  width: 100%;
+  background: linear-gradient(135deg, #082524, #134441, #1F4E3A);
+  padding: 8rem 20px 4rem 20px;
+  text-align: center;
+}
+
+.heroTag {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 3px;
+  color: #32B889;
+  text-transform: uppercase;
+  margin-bottom: 1.2rem;
+}
+
+.heroTitle {
+  font-size: clamp(2.4rem, 6vw, 5rem);
+  font-weight: 900;
+  color: #fff;
+  line-height: 1.1;
+  margin-bottom: 1.2rem;
+}
+
+.heroTitleAccent {
+  background: linear-gradient(90deg, #32B889, #A4E6C9);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.heroSub {
+  color: #A4C5C2;
+  font-size: 1rem;
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+/* ── Sticky Filter Bar ── */
+.filterBar {
+  position: sticky;
+  top: 64px;
+  z-index: 100;
+  background: #fff;
+  border-bottom: 1px solid rgba(20, 90, 86, 0.1);
+  box-shadow: 0 2px 12px rgba(20, 90, 86, 0.05);
+  padding: 0.9rem 20px;
+}
+
+.filterInner {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  align-items: center;
+}
+
+.filterBtn {
+  padding: 0.5rem 1.1rem;
+  border-radius: 50px;
+  font-size: 0.8rem;
+  font-weight: 700;
+  border: 1.5px solid rgba(20, 90, 86, 0.18);
+  background: #F4F7F5;
+  color: #4A5B59;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  white-space: nowrap;
+}
+
+.filterBtn:hover {
+  border-color: #145A56;
+  color: #145A56;
+  background: #EBF4F2;
+}
+
+.filterBtnActive {
+  background: #145A56;
+  color: #fff;
+  border-color: #145A56;
+  box-shadow: 0 4px 12px rgba(20, 90, 86, 0.25);
+}
+
+.filterCount {
+  opacity: 0.65;
+  font-weight: 600;
+  font-size: 0.72rem;
+}
+
+/* ── Grid Section ── */
+.gridSection {
+  padding: 2rem 20px 5rem 20px;
+}
+
+.resultCount {
+  font-size: 0.85rem;
+  color: #6E7E7C;
+  font-weight: 600;
+  margin-bottom: 1.4rem;
+}
+
+.resultCount strong {
+  color: #0B2524;
+  font-weight: 800;
+}
+
+.imageGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+
+@media (min-width: 640px) {
+  .imageGrid { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (min-width: 900px) {
+  .imageGrid { grid-template-columns: repeat(4, 1fr); }
+}
+
+@media (min-width: 1200px) {
+  .imageGrid { grid-template-columns: repeat(5, 1fr); gap: 16px; }
+}
+
+/* ── Image Card ── */
+.card {
+  position: relative;
+  background: #fff;
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid rgba(20, 90, 86, 0.08);
+  box-shadow: 0 4px 12px rgba(20, 90, 86, 0.04);
+  cursor: pointer;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 12px 28px rgba(20, 90, 86, 0.12);
+}
+
+.cardImage {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  overflow: hidden;
+  background: #EBF1EE;
+  position: relative;
+}
+
+.cardImage img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.card:hover .cardImage img {
+  transform: scale(1.08);
+}
+
+.cardOverlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(11, 37, 36, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.3s ease;
+}
+
+.card:hover .cardOverlay {
+  background: rgba(11, 37, 36, 0.45);
+}
+
+.cardZoomIcon {
+  color: #fff;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.card:hover .cardZoomIcon {
+  opacity: 1;
+}
+
+.cardBadge {
+  position: absolute;
+  top: 8px;
+  left: 8px;
+  background: #145A56;
+  color: #fff;
+  font-size: 0.6rem;
+  font-weight: 800;
+  padding: 0.18rem 0.55rem;
+  border-radius: 50px;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+
+.cardLabel {
+  padding: 0.6rem 0.7rem;
+}
+
+.cardLabel p {
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: #0B2524;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
+}
+
+/* ── Lightbox ── */
+.lightboxOverlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.92);
+  z-index: 2000;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.lightboxClose {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.lightboxClose:hover { background: rgba(255,255,255,0.25); }
+
+.lightboxPrev, .lightboxNext {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.12);
+  border: none;
+  color: #fff;
+  border-radius: 50%;
+  width: 48px;
+  height: 48px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background 0.2s;
+  z-index: 10;
+}
+
+.lightboxPrev { left: 16px; }
+.lightboxNext { right: 16px; }
+.lightboxPrev:hover, .lightboxNext:hover { background: rgba(255,255,255,0.25); }
+
+.lightboxContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  padding: 0 72px;
+  max-width: 960px;
+  width: 100%;
+}
+
+.lightboxImg {
+  max-height: 75vh;
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: contain;
+  box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.lightboxCaption {
+  text-align: center;
+}
+
+.lightboxCaption p {
+  color: #fff;
+  font-weight: 700;
+  font-size: 1rem;
+  margin: 0 0 0.2rem;
+}
+
+.lightboxCaption span {
+  color: rgba(255,255,255,0.45);
+  font-size: 0.82rem;
+}
+
+/* Thumbnail strip */
+.thumbStrip {
+  position: absolute;
+  bottom: 14px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 6px;
+  padding: 0 20px;
+  overflow-x: auto;
+  scrollbar-width: none;
+}
+
+.thumb {
+  flex-shrink: 0;
+  width: 42px;
+  height: 42px;
+  border-radius: 6px;
+  overflow: hidden;
+  border: 2px solid rgba(255,255,255,0.15);
+  cursor: pointer;
+  opacity: 0.55;
+  transition: all 0.2s;
+}
+
+.thumb img { width: 100%; height: 100%; object-fit: cover; }
+.thumb:hover { opacity: 0.85; }
+
+.thumbActive {
+  border-color: #32B889;
+  opacity: 1;
+  transform: scale(1.1);
+}

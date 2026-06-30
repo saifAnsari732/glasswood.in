@@ -1,0 +1,181 @@
+.processSection {
+  background-color: #FAF8F5;
+  border-top: 1px solid rgba(20, 90, 86, 0.1);
+  position: relative;
+  overflow: hidden;
+}
+
+.header {
+  text-align: center;
+  max-width: 600px;
+  margin: 0 auto 5rem auto;
+}
+
+.subtitle {
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  color: var(--accent-teal);
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.title {
+  font-size: 2.6rem;
+  margin-bottom: 1rem;
+}
+
+.accent {
+  color: var(--accent-gold);
+  font-style: italic;
+  font-family: serif;
+}
+
+.largeDescription {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #1A302E;
+}
+
+/* Timeline System */
+.timelineContainer {
+  position: relative;
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 0;
+}
+
+.timelineLine {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 2px;
+  background: rgba(20, 90, 86, 0.08);
+  z-index: 1;
+}
+
+.progressLine {
+  width: 100%;
+  height: 100%;
+  background: var(--accent-teal);
+}
+
+.timelineList {
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
+  position: relative;
+  z-index: 2;
+}
+
+.timelineItem {
+  display: flex;
+  width: 50%;
+  position: relative;
+}
+
+.leftSide {
+  align-self: flex-start;
+  justify-content: flex-end;
+  padding-right: 3rem;
+}
+
+.rightSide {
+  align-self: flex-end;
+  justify-content: flex-start;
+  padding-left: 3rem;
+}
+
+.card {
+  background: var(--card-bg);
+  padding: 3rem 2.5rem;
+  border-radius: 8px;
+  border: 1px solid rgba(20, 90, 86, 0.1);
+  box-shadow: 0 10px 30px rgba(20, 90, 86, 0.03);
+  position: relative;
+  width: 100%;
+  max-width: 400px;
+  transition: all 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  border-color: var(--accent-gold);
+  box-shadow: 0 20px 40px rgba(20, 90, 86, 0.08);
+}
+
+.stepNum {
+  position: absolute;
+  top: 1rem;
+  right: 1.5rem;
+  font-size: 2.5rem;
+  font-weight: 200;
+  color: rgba(194, 159, 85, 0.25);
+  font-family: serif;
+}
+
+.iconBox {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 60px;
+  height: 60px;
+  background: rgba(20, 90, 86, 0.08);
+  color: var(--accent-teal);
+  margin-bottom: 2rem;
+}
+
+.cardTitle {
+  font-size: 1.25rem;
+  margin-bottom: 1rem;
+  font-weight: 500;
+  color: var(--foreground);
+}
+
+.cardDesc {
+  font-size: 0.95rem;
+  color: #4A5B59;
+  line-height: 1.6;
+}
+
+/* Node circle that centers on the timeline track */
+.timelineNode {
+  position: absolute;
+  top: 30px;
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  background: var(--card-bg);
+  border: 3px solid var(--accent-teal);
+  box-shadow: 0 0 10px rgba(20, 90, 86, 0.2);
+  z-index: 10;
+}
+
+.leftSide .timelineNode {
+  right: -8px;
+}
+
+.rightSide .timelineNode {
+  left: -8px;
+}
+
+@media (max-width: 768px) {
+  .timelineLine {
+    left: 20px;
+  }
+  .timelineItem {
+    width: 100%;
+    align-self: flex-start !important;
+    justify-content: flex-start !important;
+    padding-left: 3rem !important;
+    padding-right: 0 !important;
+  }
+  .leftSide .timelineNode, .rightSide .timelineNode {
+    left: 12px;
+  }
+  .card {
+    max-width: 100%;
+  }
+}

@@ -1,0 +1,255 @@
+.detailPage {
+  min-height: 100vh;
+  padding-top: 10rem;
+  padding-bottom: 8rem;
+  background-color: var(--background);
+  position: relative;
+  overflow: hidden;
+}
+
+.bgBlob1 {
+  position: absolute;
+  top: -10%;
+  right: 15%;
+  width: 550px;
+  height: 550px;
+  background: radial-gradient(circle, rgba(20, 90, 86, 0.08) 0%, rgba(255,255,255,0) 70%);
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(60px);
+}
+
+.bgBlob2 {
+  position: absolute;
+  bottom: 10%;
+  left: 10%;
+  width: 450px;
+  height: 450px;
+  background: radial-gradient(circle, rgba(50, 184, 137, 0.06) 0%, rgba(255,255,255,0) 70%);
+  z-index: 1;
+  pointer-events: none;
+  filter: blur(50px);
+}
+
+.backLink {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--accent-teal);
+  font-weight: 700;
+  font-size: 0.95rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  margin-bottom: 4rem;
+  transition: transform 0.3s ease;
+  position: relative;
+  z-index: 10;
+}
+
+.backLink:hover {
+  transform: translateX(-5px);
+}
+
+.gridContainer {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6rem;
+  align-items: start;
+  position: relative;
+  z-index: 2;
+}
+
+/* Image framing styling */
+.imageCol {
+  width: 100%;
+}
+
+.frameWrapper {
+  width: 100%;
+  max-width: 540px;
+  aspect-ratio: 4/5;
+  border-radius: 12px;
+  background: var(--card-bg);
+  padding: 1rem;
+  border: 1px solid rgba(20, 90, 86, 0.1);
+  box-shadow: 0 30px 60px rgba(20, 90, 86, 0.08);
+}
+
+.woodBorder {
+  width: 100%;
+  height: 100%;
+  border-radius: 8px;
+  padding: 16px;
+  background: linear-gradient(135deg, #8B5A2B, #5C3A21);
+  box-shadow: inset 0 2px 5px rgba(0,0,0,0.5), 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.mirrorSurface {
+  width: 100%;
+  height: 100%;
+  border-radius: 4px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: inset 0 0 15px rgba(0,0,0,0.3);
+}
+
+.productImage {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.frameWrapper:hover .productImage {
+  transform: scale(1.03);
+}
+
+.glare {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 200%;
+  height: 200%;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.15) 0%,
+    rgba(255, 255, 255, 0) 50%
+  );
+  transform: rotate(-30deg) translate(-50%, -50%);
+  pointer-events: none;
+}
+
+/* Info styling */
+.infoCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.categoryBadge {
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: var(--accent-teal);
+  margin-bottom: 1rem;
+}
+
+.title {
+  font-size: 4rem;
+  font-weight: 800;
+  line-height: 1.1;
+  color: var(--foreground);
+  margin-bottom: 2rem;
+}
+
+.priceTag {
+  display: flex;
+  flex-direction: column;
+  background: rgba(20, 90, 86, 0.04);
+  border-left: 4px solid var(--accent-teal);
+  padding: 1rem 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.priceLabel {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #6E7E7C;
+  letter-spacing: 1px;
+  margin-bottom: 0.2rem;
+}
+
+.priceValue {
+  font-size: 2.2rem;
+  font-weight: 800;
+  color: var(--accent-teal);
+}
+
+.description {
+  font-size: 1.2rem;
+  line-height: 1.7;
+  color: #2C3C3A;
+  margin-bottom: 3rem;
+  font-weight: 500;
+}
+
+.specsSection {
+  margin-bottom: 3.5rem;
+}
+
+.specsHeading {
+  font-size: 1.1rem;
+  font-weight: 800;
+  letter-spacing: 1px;
+  color: var(--foreground);
+  margin-bottom: 1.5rem;
+}
+
+.specsList {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.specItem {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: #2C3C3A;
+}
+
+.checkIconWrapper {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+  border-radius: 50%;
+  background: rgba(50, 184, 137, 0.1);
+  color: var(--accent-gold);
+}
+
+.checkIcon {
+  color: var(--accent-gold);
+}
+
+.actions {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 991px) {
+  .gridContainer {
+    grid-template-columns: 1fr;
+    gap: 4rem;
+  }
+  .imageCol {
+    display: flex;
+    justify-content: center;
+  }
+  .frameWrapper {
+    max-width: 440px;
+  }
+  .title {
+    font-size: 3rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .detailPage {
+    padding-top: 7rem;
+  }
+  .title {
+    font-size: 2.5rem;
+  }
+  .actions {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  .actions a {
+    text-align: center;
+  }
+}

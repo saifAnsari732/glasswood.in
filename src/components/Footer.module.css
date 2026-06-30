@@ -1,0 +1,91 @@
+.footer {
+  background-color: var(--foreground);
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: 5rem;
+  color: #fff;
+}
+
+.footerContainer {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: 4rem;
+  margin-bottom: 4rem;
+}
+
+.logo {
+  font-size: 1.8rem;
+  font-weight: 700;
+  margin-bottom: 1rem;
+}
+
+.accent {
+  color: var(--accent-gold);
+}
+
+.description {
+  color: #888;
+  line-height: 1.6;
+  max-width: 400px;
+}
+
+.heading {
+  font-size: 1.2rem;
+  color: #fff;
+  margin-bottom: 1.5rem;
+}
+
+.linkList {
+  list-style: none;
+}
+
+.linkList li {
+  margin-bottom: 0.8rem;
+}
+
+.linkList a {
+  color: #888;
+  transition: color 0.3s ease;
+}
+
+.linkList a:hover {
+  color: var(--accent-gold);
+}
+
+.contactList {
+  list-style: none;
+}
+
+.contactList li {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  margin-bottom: 1rem;
+  color: #888;
+}
+
+.icon {
+  color: var(--accent-gold);
+}
+
+.contactList a {
+  transition: color 0.3s ease;
+}
+
+.contactList a:hover {
+  color: var(--accent-gold);
+}
+
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding: 1.5rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #666;
+}
+
+@media (max-width: 900px) {
+  .footerContainer {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+}
